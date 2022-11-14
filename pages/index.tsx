@@ -1,3 +1,4 @@
+import { DayView } from '../src/components/DayView';
 import { useAPI } from '../src/hooks';
 
 export default function Index() {
@@ -10,15 +11,7 @@ export default function Index() {
 
   return (
     <div>
-      {events.map((event) => (
-        <>
-          <div>{event.title}</div>
-          <div>
-            {event.start} - {event.end}
-          </div>
-          <hr />
-        </>
-      ))}
+      <DayView events={events} />
     </div>
   );
 }
