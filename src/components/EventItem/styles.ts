@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { COLORS } from '../../consts';
+import { COLORS, GRID_RESOLUTION } from '../../consts';
 
 type BlockProps = {
   $start: number;
@@ -24,6 +24,7 @@ const StyledSharedBlock = styled.div`
   font-weight: 300;
   color: ${COLORS.textPrimary};
   white-space: nowrap;
+  min-height: 2.8125rem;
 
   & h3 {
     margin: 0;
@@ -36,6 +37,6 @@ const StyledSharedBlock = styled.div`
 `;
 
 export const StyledBlock = styled(StyledSharedBlock)<BlockProps>`
-  grid-row-start: ${({ $start }) => $start + 1};
-  grid-row-end: ${({ $end }) => $end + 1};
+  grid-row-start: ${({ $start }) => Math.min(GRID_RESOLUTION, $start + 1)};
+  grid-row-end: ${({ $end }) => Math.min(GRID_RESOLUTION, $end + 1)};
 `;
