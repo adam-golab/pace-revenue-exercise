@@ -24,7 +24,7 @@ const StyledSharedBlock = styled.div`
   font-weight: 300;
   color: ${COLORS.textPrimary};
   white-space: nowrap;
-  min-height: 2.8125rem;
+  min-height: 3rem;
 
   & h3 {
     margin: 0;
