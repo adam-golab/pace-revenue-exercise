@@ -7,9 +7,7 @@ type BlockProps = {
   $end: number;
 };
 
-export const StyledBlock = styled.div<BlockProps>`
-  grid-row-start: ${(props) => props.$start + 1};
-  grid-row-end: ${(props) => props.$end + 1};
+const StyledSharedBlock = styled.div`
   background: ${COLORS.backgroundPrimaryRGBA};
   background: linear-gradient(
     90deg,
@@ -35,4 +33,9 @@ export const StyledBlock = styled.div<BlockProps>`
     overflow: hidden;
     text-overflow: ellipsis;
   }
+`;
+
+export const StyledBlock = styled(StyledSharedBlock)<BlockProps>`
+  grid-row-start: ${({ $start }) => $start + 1};
+  grid-row-end: ${({ $end }) => $end + 1};
 `;
