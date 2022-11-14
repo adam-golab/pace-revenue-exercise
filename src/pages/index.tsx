@@ -1,5 +1,5 @@
-import { DayView } from '../src/components/DayView';
-import { useAPI } from '../src/hooks';
+import { DayView } from '../components/DayView';
+import { useAPI } from '../hooks';
 
 export default function Index() {
   const { data, error } = useAPI();
